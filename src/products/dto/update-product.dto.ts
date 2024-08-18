@@ -8,4 +8,5 @@ export class UpdateProductDto extends PartialType(CreateProductDto) {
     @IsPositive()
     id: number;
     
+    //PRUEBA
 }
