@@ -67,11 +67,13 @@ export class ProductsService extends PrismaClient implements OnModuleInit{
 
     //Se puede comprobar si el updateProductDto viene vacio entonces q no haga nada, porque no hay nada q actualizar
 
+    const {id: __, ...data} = updateProductDto; //Borramos el id del dto
+
     await this.findOne(id);
 
     return this.product.update({
       where: {id},
-      data: updateProductDto
+      data: data
     });
 
   }
